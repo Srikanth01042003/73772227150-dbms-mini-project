@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Add New Guest</h2>
+    
+    <!-- Form to add a new guest -->
+    <form method="POST" action="{{ url_for('add_guest') }}">
+        <div class="mb-3">
+            <label for="id" class="form-label">Guest ID</label>
+            <input type="number" class="form-control" id="id" name="id" required>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Add Guest</button>
+        <!-- Cancel button -->
+        <a href="{{ url_for('guest_details') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

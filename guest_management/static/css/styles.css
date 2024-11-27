@@ -1,0 +1,42 @@
+
+body {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+h1, h2, h3 {
+    color: #ffd700;
+}
+
+.btn-primary {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #ffa500;
+    border-color: #ffa500;
+}
+
+.table {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}

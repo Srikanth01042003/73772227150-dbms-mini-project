@@ -1,0 +1,16 @@
+CREATE DATABASE guest_management;
+
+USE guest_management;
+
+CREATE TABLE guests (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    phone VARCHAR(15)
+);
+INSERT INTO guests (id, name, email, phone) VALUES
+(1, 'John Doe', 'johndoe@example.com', '1234567890'),
+(2, 'Jane Smith', 'janesmith@example.com', '2345678901'),
+(3, 'Mark Johnson', 'markjohnson@example.com', '3456789012'),
+(4, 'Emily Davis', 'emilydavis@example.com', '4567890123'),
+(5, 'Michael Brown', 'michaelbrown@example.com', '5678901234');

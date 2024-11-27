@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Guest Details</h2>
+    
+    <!-- Button to add a new guest -->
+    <a href="{{ url_for('add_guest') }}" class="btn btn-success mb-3">Add New Guest</a>
+
+    <hr>
+
+    <!-- Search bar for filtering guests -->
+    <form method="GET" action="{{ url_for('guest_details') }}" class="mb-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by Name, Email, or Phone" name="search" value="{{ request.args.get('search', '') }}">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <!-- List of existing guests -->
+    <h3>Guest List</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guest in guests %}
+            <tr>
+                <td>{{ guest[0] }}</td>
+                <td>{{ guest[1] }}</td>
+                <td>{{ guest[2] }}</td>
+                <td>{{ guest[3] }}</td>
+                <td>
+                    <!-- Edit button -->
+                    <a href="{{ url_for('edit_guest', id=guest[0]) }}" class="btn btn-warning btn-sm">Edit</a>
+                    
+                    <!-- Delete button -->
+                    <form method="POST" action="{{ url_for('delete_guest', id=guest[0]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this guest?')">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> 
+{% endblock %}
